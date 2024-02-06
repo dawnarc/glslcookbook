@@ -18,7 +18,8 @@ target_compile_definitions(${target}
 target_link_libraries( ${target}
 		PRIVATE
 		ingredients
-		glfw
+		${GLM_LIBRARY}
+		${GLFW3_LIBRARY}
 		${OPENGL_gl_LIBRARY}
 		)
 

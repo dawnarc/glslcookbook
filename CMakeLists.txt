@@ -7,8 +7,14 @@ if(MSVC)
   add_definitions(/DNOMINMAX)
 endif()
 
-find_package( glm CONFIG REQUIRED )
-find_package( glfw3 CONFIG REQUIRED )
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/modules/")
+
+find_package( glm REQUIRED )
+include_directories(${GLM_INCLUDE_DIR})
+
+find_package( glfw3 REQUIRED )
+include_directories(${GLFW3_INCLUDE_DIR})
+
 find_package( OpenGL REQUIRED )
 
 include_directories( ingredients )
